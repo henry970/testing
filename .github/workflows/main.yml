@@ -1,4 +1,4 @@
-name: testing
+name: Run Selenium Test
 
 on: [push, pull_request]
 
@@ -24,9 +24,8 @@ jobs:
           wget https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip
           unzip chromedriver_linux64.zip -d /usr/local/bin/
           python -m pip install --upgrade pip
-          pip install selenium
+          pip install selenium pytest
 
       - name: Run Selenium test
         run: |
-          xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' python testing.py
-
+          xvfb-run --auto-servernum --server-args='-screen 0 1024x768x24' pytest test_selenium.py
