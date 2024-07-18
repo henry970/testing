@@ -19,17 +19,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-<<<<<<< HEAD
-          python-version: '3.12'  # Keep Python version as 3.8
-=======
-          python-version: '3.12.3'  # Specifying the Python version
->>>>>>> cabd7a16eec49d812d5f01768282342b494596c8
+          python-version: '3.8'  # Specify your Python version here
 
       - name: Install dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-html
 
