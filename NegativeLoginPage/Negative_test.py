@@ -34,6 +34,3 @@ class LoginPage1:
         )
 
         return error_message_element
-
-
-# end
