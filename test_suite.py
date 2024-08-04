@@ -2,8 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from NegativeLoginPage.Negative_test import LoginPage1
-from loginPage.login_page_test import LoginPage
+from loginPage.login_page_test import LoginPage, LoginPage1
 
 
 @pytest.fixture(scope="module")
@@ -24,7 +23,7 @@ def driver_setup():
 #     driver.implicitly_wait(20)
 #     driver.maximize_window()
 #     yield driver
-#     driver.close()
+#     driver.quit()
 
 
 @pytest.fixture(scope="module")
@@ -81,4 +80,3 @@ def test_negative_login_on_sauce_demo_website(login_gbp):
         "Error message does not match expected."
 
     print("Negative test passed: Username and password do not match any user in this service.")
-    #
